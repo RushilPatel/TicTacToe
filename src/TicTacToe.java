@@ -151,7 +151,7 @@ public class TicTacToe {
     }
 
     // Mark computer's move
-    public static void boxMarker (final String string) {
+    private static void boxMarker (final String string) {
 
         if (string.equals ("11")) {
             if (box11 == 0) {
@@ -204,7 +204,7 @@ public class TicTacToe {
     // Check and see if the computer can block a box to avoid the player from
     // winning
     // if so, the returns the box name to be blocked
-    public static String block () {
+    private static String block () {
         if ( ( box11 == 0) && win ("11", false)) {
             return ( "11");
         } else if ( ( box12 == 0) && win ("12", false)) {
@@ -232,7 +232,7 @@ public class TicTacToe {
     // If the computer can't win, then check if the player can be avoided from
     // winning.
     // If not, then make a random move, or return the box name to block
-    public static String myBox () {
+    private static String myBox () {
         if ( ( box11 == 0) && win ("11", true)) {
             return ( "11");
         } else if ( ( box12 == 0) && win ("12", true)) {
@@ -263,7 +263,7 @@ public class TicTacToe {
     private static int[] middleBoxes = { 2, 4, 6, 8 };
 
     // Selects a random box for the computer
-    public static String randomBox () {
+    private static String randomBox () {
         int box;
         // If it's computer's first turn and if the
         // center box is taken up, then pick one of the
@@ -336,7 +336,7 @@ public class TicTacToe {
     // Checks for the winner.
     // Compares the previously stored moves to the current move and checks for
     // win
-    public static boolean win (final String box, final boolean computer) {
+    private static boolean win (final String box, final boolean computer) {
         if (computer) {
             if ( ( myPoint.size () < 2) || ( playerPoints.size () < 2)) {
                 return false;
@@ -467,7 +467,7 @@ public class TicTacToe {
     }
 
     // Converts the mouse coordinates to the box number
-    public static String convert (final double x, final double y) {
+    private static String convert (final double x, final double y) {
         if ( ( x <= -100) && ( y >= 100) && ( y <= 300) && ( x >= -300)) {
             return "11";
         } else if ( ( x <= -100) && ( x >= -300)
